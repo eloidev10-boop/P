@@ -4,25 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P | Member Page</title>
-    <style>
+<style>
+            :root{
+  --plp-blue:#0d6efd;
+  --plp-green:#1faa59;
+  --plp-dark:#0f172a;
+  --plp-light:#f4f9ff;
+  --plp-white:#ffffff;
+}
         html {
-            background-color: aliceblue;
+            
+    background: linear-gradient(
+      to right,
+      #f4f9ff,
+      #e8f5ee
+    );}
+
+.leaders-section{
+  padding:100px 10%;
+  background:#fff;
+}
+
+.leaders-title{
+  text-align:center;
+  font-size:48px;
+  margin-bottom:50px;
+}
+
+/* X-axis slider */
+.leaders-slider{
+  display:flex;
+  gap:25px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:20px;
+  scroll-behavior:smooth;
+}
+
+/* Hide scrollbar */
+.leaders-slider::-webkit-scrollbar{
+  display:none;
+}
+
+/* Card */
+.leader-card{
+  min-width:280px;
+  flex:0 0 auto;
+  background:white;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  scroll-snap-align:center;
+  text-align:center;
+  transition:0.3s;
+}
+
+.leader-card:hover{
+  transform:scale(1.05);
+}
+
+.leader-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:20px 20px 0 0;
+}
+
+.leader-card h3{
+  color:#0d6efd;
+  margin:10px 0 5px;
+}
+html{
             scroll-behavior: smooth;
            overflow-x: hidden;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
         .logo-area{
             justify-content: flex-start;
             padding-left: 30px;      
           }
           .header-container{
-            display: flex;
+           display: flex;
             justify-content: space-between;
-            padding-top: 15px;
+            padding-top: 10px;
+            background: transparent;
+     
+backdrop-filter: blur(10px);
+
+position: sticky;
+top: 0;
+z-index: 1000;
           }
-         .nav_links{
-    display: flex;
+          .nav_links{
+             display: flex;
     gap: 20px;
     padding-right: 50px;
+    padding-top: 18px;
+          }
+.nav_links a{
+    text-decoration:none;
+    font-size:18px;
+    color:var(--plp-dark);
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+.nav_links a:hover{
+    color:var(--plp-green);
+}
+/* PORTFOLIO SECTION */
+.section-portfolio {
+  padding: 120px 60px;
+  background-image: url("images/y2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  
+  background:
+  linear-gradient(
+    rgba(15,23,42,0.85),
+    rgba(15,23,42,0.85)
+  ),
+  url("images/y2.jpg");
+
+}
+.section-portfolio .section-title{
+   color:white;
+}
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.portfolio-item {
+  aspect-ratio: 16/10;
+  background: #222;
+  border: 1px solid #2a2a2a;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+.portfolio-item:hover{
+    transform:translateY(-8px);
+    transition:0.4s ease;
+}
+.portfolio-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #000 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.portfolio-item:hover::before {
+  opacity: 0.4;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(18, 18, 18, 0.98) 100%
+  );
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.portfolio-item:hover .portfolio-label {
+  transform: translateY(0);
+}
+
+.portfolio-label h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.portfolio-label p {
+  font-size: 13px;
+  color: #777;
 }
 
 .nav_links a{
@@ -49,10 +239,288 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
-    </style>
+.hero_container{
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px;
+}
+
+/* SLIDER */
+.slider-container{
+ 
+    height: 500px;
+    border-radius: 25px;
+    padding-top: 0px;
+   
+    backdrop-filter: blur(15px);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+  135deg,
+  rgba(13,110,253,0.15),
+  rgba(31,170,89,0.15)
+);
+box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+/* SLIDES */
+.slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.slide.active{
+    opacity: 1;
+}
+
+/* HERO TEXT */
+.slide-title{
+    font-size:70px;
+    margin-bottom:20px;
+    color:var(--plp-blue);
+    font-weight:800;
+}
+.slide-content{
+    font-size:20px;
+    color:#333;
+    width:60%;
+}
+
+/* DOTS */
+.slider-dots{
+    position: absolute;
+    bottom: 25px;
+    display: flex;
+    gap: 12px;
+}
+
+.dot{
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:#ccc;
+    border:none;
+}
+
+.dot.active{
+    background:var(--plp-green);
+    transform:scale(1.2);
+}
+
+section{
+  padding:80px 10%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.section-title h2{
+  font-size:36px;
+  
+  margin-bottom:10px;
+}
+
+.section-title p{
+  
+  font-size:16px;
+}
+
+.section-about {
+  padding: 120px 60px;
+
+  background: white;
+
+
+  background-image: url("#");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-content h3 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  letter-spacing: -0.5px;
+}
+
+.about-content p {
+
+  margin-bottom: 24px;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.about-content p a {
+ 
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.about-content p a:hover {
+color: #222;
+}
+
+.about-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-block{
+  padding:30px;
+  background:#fff;
+  border-left:5px solid var(--plp-blue);
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.about-block h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: 700;
+
+}
+
+.about-block p {
+  font-size: 13px;
+
+  margin-bottom: 0;
+}
+.section-services{
+  background:linear-gradient(
+    to right,
+    #f4f9ff,
+    #e8f5ee
+  );
+   padding: 120px 60px;
+}
+.services-container {
+ max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title{
+  font-size:52px;
+  font-weight:800;
+  color:var(--plp-dark);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  border-radius: 10px;
+}
+
+.service-card{
+   padding: 40px;
+  background-color: white;
+  border-right: 1px solid #2a2a2a;
+  border-bottom: 1px solid #2a2a2a;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+   border-radius: 10px;
+}
+.service-card:hover{
+   transform:translateY(-10px);
+   border-bottom:4px solid var(--plp-green);
+}
+.service-card:nth-child(3n) {
+  border-right: none;
+}
+.service-number{
+  color:var(--plp-blue);
+  font-weight:bold;
+}
+.service-card:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(180deg, #555 0%, #333 100%);
+  transition: height 0.3s ease;
+}
+
+.service-card:hover::before {
+  height: 100%;
+}
+
+.service-number {
+  font-size: 48px;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: "Courier New", monospace;
+  position: relative;
+  display: inline-block;
+}
+
+.service-card:hover .service-number {
+  color: #555;
+}
+
+.service-number::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #555;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-number::after {
+  transform: scaleX(1);
+}
+
+.service-card h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.service-card p {
+  color: #999;
+  font-size: 15px;
+  line-height: 1.8;
+}
+</style>
 </head>
 
 <body>
+    <main>
     <section class="header-container">
         <div class="logo-area">
         <div class="img-logo">
@@ -61,9 +529,9 @@
         </div>
         <div class="nav_links">
             <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">PLP Class</a>
-            <a href="#">Events</a>
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#">Projects</a>
            
         <div class="dropdown">
             <a href="#">Sub-Families</a>
@@ -74,10 +542,268 @@
                 <a href="#">Inkingi</a>
             </div>
         </div>
-            <a href="#">Fellowships</a>
+            <a href="#">PLP Class</a>
             <a href="#">Games</a>
             <a href="#">Admin</a>
         </div>
     </section>
+      <section class="hero_container">
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <h2 class="slide-title">Peace & Love Proclaimers</h2>
+
+<p class="slide-content">
+Empowering youth through peace,
+unity, reconciliation and leadership.
+</p>
+                <div class="slider-dots">
+                    <button class="dot active" onclick="currentSlide(0)" aria-label="Go to slide 1"></button>
+                    <button class="dot" onclick="currentSlide(1)" aria-label="Go to slide 2"></button>
+                    <button class="dot" onclick="currentSlide(2)" aria-label="Go to slide 3"></button>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide active">
+              <h2 class="slide-title">Youth For Change</h2>
+
+<p class="slide-content">
+Building a generation driven by love,
+hope and positive transformation.
+</p>
+                <div class="slider-dots">
+                    <button class="dot" onclick="currentSlide(0)" aria-label="Go to slide 1"></button>
+                    <button class="dot active" onclick="currentSlide(1)" aria-label="Go to slide 2"></button>
+                    <button class="dot" onclick="currentSlide(2)" aria-label="Go to slide 3"></button>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide active">
+                <h2 class="slide-title">Together We Rise</h2>
+
+<p class="slide-content">
+Creating impact through events,
+projects and community service.
+</p>
+                <div class="slider-dots">
+                    <button class="dot" onclick="currentSlide(0)" aria-label="Go to slide 1"></button>
+                    <button class="dot" onclick="currentSlide(1)" aria-label="Go to slide 2"></button>
+                    <button class="dot active" onclick="currentSlide(2)" aria-label="Go to slide 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+       <!-- ABOUT SECTION -->
+      <section id="about" class="section-about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-container">
+          <div class="about-content">
+            <h3>Software Development Club(SOD)</h3>
+            <p>
+              We believe in the power of simplicity. Every project we undertake
+              is approached with a commitment to excellence, minimalist design
+              principles, and a deep understanding of digital strategy.
+            </p>
+            <p>
+              Our team brings together designers, developers, and strategists
+              who share a passion for creating meaningful digital experiences.
+            </p>
+          </div>
+          <div class="about-blocks">
+            <div class="about-block">
+              <h4>Creative Excellence</h4>
+              <p>
+                Award-winning designs that stand out and deliver results beyond
+                expectations.
+              </p>
+            </div>
+            <div class="about-block">
+              <h4>Technical Expertise</h4>
+              <p>
+                Modern technology stack ensuring performance, security, and
+                scalability.
+              </p>
+            </div>
+            <div class="about-block">
+              <h4>Client Partnership</h4>
+              <p>
+                Collaborative approach with transparent communication throughout
+                the project.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+<section class="leaders-section">
+  <h2 class="leaders-title">PLP Leaders</h2>
+
+  <div class="leaders-slider">
+
+    <div class="leader-card">
+      <img src="images/leader1.jpg" alt="">
+      <h3>TUYISHIME Elie Yves</h3>
+      <p>Founder</p>
+    </div>
+
+    <div class="leader-card">
+      <img src="images/leader2.jpg" alt="">
+      <h3>Leader Two</h3>
+      <p>Coordinator</p>
+    </div>
+
+    <div class="leader-card">
+      <img src="images/leader3.jpg" alt="">
+      <h3>Leader Three</h3>
+      <p>Manager</p>
+    </div>
+
+    <div class="leader-card">
+      <img src="images/leader4.jpg" alt="">
+      <h3>Leader Four</h3>
+      <p>Advisor</p>
+    </div>
+
+  </div>
+</section>
+<section id="events" class="section-portfolio">
+        <div class="portfolio-container">
+          <h2 class="section-title">Events</h2>
+          <div class="portfolio-grid">
+            
+            <div class="portfolio-item">
+              <img
+                src="images/christopher-gower-m_HRfLhgABo-unsplash.jpg"
+                alt="Project Alpha"
+                loading="lazy"
+              />
+              <div class="portfolio-label">
+                <h3>Event 1</h3>
+                <p>Kwibuka Event</p>
+              </div>
+              
+            </div>
+        
+            <div class="portfolio-item">
+              <img
+                src="images/pexels-gezerasph-26804169.jpg"
+                alt="Project Beta"
+                loading="lazy"
+              />
+              <div class="portfolio-label">
+                <h3>Event 2</h3>
+                <p>Reconciliation Event</p>
+              </div>
+             
+            </div>
+            <div class="portfolio-item">
+              <img
+                src="images/2.jpg"
+                alt="Project Gamma"
+                loading="lazy"
+              />
+              <div class="portfolio-label">
+                <h3>Event 3</h3>
+                <p>Charity Event</p>
+              </div>
+              
+      
+            </div>
+            <div class="portfolio-item">
+              <img
+                src="images/5.jpg"
+                alt="Project Delta"
+                loading="lazy"
+              />
+              <div class="portfolio-label">
+                <h3>Event 4</h3>
+                <p>Ku Gicaniro</p>
+              </div>
+             
+            </div>
+              <div class="portfolio-item">
+              <img
+                src="images/5.jpg"
+                alt="Project Delta"
+                loading="lazy"
+              />
+              <div class="portfolio-label">
+                <h3>Event 5</h3>
+                <p>Youth Conferences</p>
+              </div>
+             
+            </div>
+              <div class="portfolio-item">
+              <img
+                src="images/5.jpg"
+                alt="Project Delta"
+                loading="lazy"
+              />
+              <div class="portfolio-label">
+                <h3>Event 6</h3>
+                <p>Leadership Camps</p>
+              </div>
+             
+            </div>
+           </div>
+           </div>
+      </section>
+ <section id="project" class="section-services">
+        <div class="services-container">
+          <h2 class="section-title">Our Projects</h2>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-number">.01</div>
+              <h3>PLP Academy</h3>
+              <p>
+                For Web Development We teach Programming Languages like  HTML, CSS and Java Script.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="service-number">.02</div>
+              <h3>MegaCare Project</h3>
+              <p>
+              Here We Let you Know about Robotics by using also Python, Java and so on.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="service-number">.03</div>
+              <h3>Mentor a Child Project</h3>
+              <p>
+                Strategic visual identities that communicate your unique value
+                and resonate with your target audience effectively.
+              </p>
+            </div>
+            <div class="service-card">
+              <div class="service-number">.04</div>
+              <h3>Niboye Peace Village Project</h3>
+              <p>
+                Here we help you on understanding Vulneralbility of any device and Networking.
+              </p>
+            </div>
+             <div class="service-card">
+              <div class="service-number">.05</div>
+              <h3>Peace Education Programs in Schools</h3>
+              <p>
+                Here we help you on understanding Vulneralbility of any device and Networking.
+              </p>
+            </div>
+  
+            <div class="service-card">
+              <div class="service-number">.06</div>
+              <h3>Forgiveness & Reconciliation Project</h3>
+              <p>
+                Complete project management from concept to launch, with ongoing
+                support and optimization.
+              </p>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+<script src="script.js"></script>
 </body>
 </html>
