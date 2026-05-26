@@ -94,6 +94,206 @@ position: sticky;
 top: 0;
 z-index: 1000;
           }
+    
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+    background:linear-gradient(to right,#ff00cc,#3333ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    color:#cbd5e1;
+    font-size:18px;
+}
+
+/* FOOTER */
+
+.footer{
+    padding:70px 8%;
+}
+
+.footer-container{
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+/* LEFT */
+
+.footer-left{
+    flex:1;
+    min-width:320px;
+}
+
+.footer-left h2{
+    margin-bottom:20px;
+    font-size:32px;
+    color:#fff;
+}
+
+.video-box{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:15px;
+    border-radius:25px;
+    box-shadow:0 0 30px rgba(255,0,255,0.3);
+}
+
+.video-box iframe{
+    width:100%;
+    height:320px;
+    border:none;
+    border-radius:20px;
+}
+
+.address{
+    margin-top:25px;
+    padding:25px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 0 20px rgba(0,255,255,0.2);
+}
+
+.address h3{
+    margin-bottom:15px;
+    color:#38bdf8;
+}
+
+.address p{
+    line-height:2;
+    color:#e2e8f0;
+}
+
+/* RIGHT LOGIN */
+
+.footer-right{
+    flex:1;
+    min-width:320px;
+}
+
+.login-card{
+    padding:45px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:
+    0 0 25px rgba(255,0,255,0.3),
+    0 0 45px rgba(0,255,255,0.2);
+}
+
+.login-card h2{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:34px;
+    background:linear-gradient(to right,#00dbde,#fc00ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.login-card form{
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+.login-card input{
+    padding:16px 20px;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    background:rgba(255,255,255,0.1);
+    color:white;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.login-card input::placeholder{
+    color:#cbd5e1;
+}
+
+.login-card input:focus{
+    transform:scale(1.02);
+    border:1px solid #38bdf8;
+    box-shadow:0 0 15px #38bdf8;
+}
+
+.login-card button{
+    padding:16px;
+    border:none;
+    border-radius:15px;
+    background:linear-gradient(to right,#ff00cc,#3333ff);
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.login-card button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px #ff00cc;
+}
+
+#error{
+    text-align:center;
+    font-size:14px;
+    margin-top:5px;
+    color:#f87171;
+}
+
+.success{
+    color:#4ade80;
+}
+
+/* FOOTER BOTTOM */
+
+.bottom{
+    margin-top:60px;
+    text-align:center;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding-top:25px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .footer-container{
+        flex-direction:column;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .video-box iframe{
+        height:220px;
+    }
+
+    .login-card{
+        padding:30px 20px;
+    }
+
+}
+
           .nav_links{
              display: flex;
     gap: 20px;
@@ -788,6 +988,102 @@ unity, reconciliation and leadership.
           
         </div>
       </section>
+<section class="hero">
+
+    <h1>PLP Urugwiro</h1>
+
+    <p>
+      Empowering youth through peace,
+unity, reconciliation and leadership.
+    </p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- LEFT -->
+
+        <div class="footer-left">
+
+            <h2>Watch Our Video</h2>
+
+            <div class="video-box">
+
+                <iframe
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+            <div class="address">
+
+                <h3>Our Address</h3>
+
+                <p>
+                    PLP Urugwiro <br>
+                    Kigali, Rwanda <br><br>
+
+                    Email:
+                   eloidev10@gmail.com<br>
+
+                    Phone:
+                    +250 788 000 000
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="footer-right">
+
+            <div class="login-card">
+
+                <h2>Member Login</h2>
+
+                <form id="loginForm">
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter Email"
+                        required
+                    >
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter Password"
+                        required
+                    >
+
+                    <button type="submit">
+                        Login
+                    </button>
+
+                    <div id="error"></div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="bottom">
+
+        © 2026 Saint Joseph PLP — All Rights Reserved
+
+    </div>
+
+</footer>
 
 <script src="script.js"></script>
 </body>
