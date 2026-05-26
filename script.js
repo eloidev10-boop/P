@@ -183,3 +183,36 @@ setInterval(() => {
     slider.scrollTo({ left: 0, behavior: "smooth" });
   }
 }, 5000);
+
+const form = document.getElementById("loginForm");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    // Allowed Credentials
+    const validEmail = "plpurugwiro@gmail.com";
+    const validPassword = "urugwiro";
+
+    if(email === validEmail && password === validPassword){
+
+        document.getElementById("error").innerHTML =
+        "<span class='success'>Login successful...</span>";
+
+        // Redirect after login
+        setTimeout(() => {
+            window.location.href = "dashboard.html";
+        }, 1000);
+
+    } else {
+
+        document.getElementById("error").innerHTML =
+        "Invalid email or password";
+
+    }
+
+});
+
