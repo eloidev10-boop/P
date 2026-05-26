@@ -204,7 +204,7 @@ form.addEventListener("submit", function(e){
 
         // Redirect after login
         setTimeout(() => {
-            window.location.href = "dashboard.html";
+            window.location.href = "member.html";
         }, 1000);
 
     } else {
