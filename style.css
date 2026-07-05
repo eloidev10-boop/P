@@ -1,4 +1,15 @@
-
+.logo img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:white;
+    padding:5px;
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+    transition:0.4s ease;
+}
+.logo img:hover{
+    transform:scale(1.08);
+}
             :root{
   --plp-blue:#0d6efd;
   --plp-green:#1faa59;
