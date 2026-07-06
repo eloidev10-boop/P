@@ -414,6 +414,7 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .portfolio-label p {
+   padding-top: 10px;
   font-size: 13px;
   color: #777;
 }
